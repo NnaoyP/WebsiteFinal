@@ -1,8 +1,15 @@
 app.controller('Terminal', ['$scope', '$sanitize', '$http', ($scope, $sanitize, $http) => {
 
-	var apiServer = 'http://127.0.0.1/api/api-terminal.php';
+	var apiServer = './api/api-terminal.php';
 
 	$scope.terminal = new Array("Bienvenue sur le super terminal pour voir les commandes disponible tapez help ou ?<br>");
+
+
+	// Fait descendre le curseur du terminal au fur et à mesure des commandes
+	function terminalScrollDown()
+	{
+		$('#terminal').scrollTop($("#terminal").prop('scrollHeight'));
+	}
 	
 	//Event listener du champ, il vérifie si l'entrée de l'utilisateur est la touche 'entrée' et envoie la commande.
 		$scope.cmdKeyUP = (e)=>
@@ -18,9 +25,6 @@ app.controller('Terminal', ['$scope', '$sanitize', '$http', ($scope, $sanitize, 
 				treatCmd(cmd.toLowerCase().trim(),fullcmd);
 
 				$scope.cmd = ('');
-				
-				// Fait descendre le curseur au fur et à mesure des commandes
-				$('#terminal').scrollTop($("#terminal").prop('scrollHeight'));
 			}
 		}
 
@@ -47,17 +51,16 @@ app.controller('Terminal', ['$scope', '$sanitize', '$http', ($scope, $sanitize, 
 						getHelp();
 						break;
 					case "yeah":
-					case "yeah !":
 						addLine( getCallerSpan('purple','SuperTerminal') + "Yeaaaaaaah !" );
 						break;
-					case "le sens de l'univers et de tout le reste":
+					case "theultimatequestion":
 						addLine( getCallerSpan('purple','SuperTerminal') + "Waiting 2 Billions years ...");
 						addLine( getCallerSpan('purple','SuperTerminal') + "42" );
 						break;
-					case "who's calling ?":
+					case "whoscalling":
 						addLine( getCallerSpan('green','Cthulhu') + "Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn !" );
 						break;
-					case "my ultimate is ready":
+					case "muir":
 						getUltimate();
 						break;
 					case "exit":
@@ -110,9 +113,7 @@ app.controller('Terminal', ['$scope', '$sanitize', '$http', ($scope, $sanitize, 
 			$http.get(apiServer)
 			.then( (data) => {
 				
-				console.log(data.data);
 				let treatedData = data.data.replace(/(=>)/g,"<span class='cmd-purple' >=></span>");
-				console.log(treatedData);
 
 				addLine(getCallerSpan('blue','HELP'));
 				addLine("help/? <span class='cmd-purple' >=></span> Voir les commandes disponibles");
@@ -120,6 +121,7 @@ app.controller('Terminal', ['$scope', '$sanitize', '$http', ($scope, $sanitize, 
 				addLine("=(calcul) <span class='cmd-purple' >=></span> Faire un calcul");
 				addLine("exit <span class='cmd-purple' >=></span> Quitter le terminal (vous devrez recharger la page)");
 				addLine(treatedData);
+				terminalScrollDown();
 
 			});
 		}
@@ -169,6 +171,7 @@ app.controller('Terminal', ['$scope', '$sanitize', '$http', ($scope, $sanitize, 
 				$http.get(apiServer+"?ask="+cmd+"&name="+cmdName+"&com="+cmdComment).then( (response) => 
 				{
 					addLine(getCallerSpan('green','Serveur')+response.data);
+					terminalScrollDown();
 				}, (err) => 
 				{
 					addLine(getCallerSpan('red','ERREUR')+err.statusText);
@@ -193,6 +196,7 @@ app.controller('Terminal', ['$scope', '$sanitize', '$http', ($scope, $sanitize, 
 					{
 						addLine("<span class='cmd-yellow'>"+element.name+"</span> : "+element.comment);
 					});
+					terminalScrollDown();
 
 				} , (err) => 
 				{
@@ -206,6 +210,7 @@ app.controller('Terminal', ['$scope', '$sanitize', '$http', ($scope, $sanitize, 
 			$http.get(apiServer + '?ask=' + cmd).then( (response) => 
 				{
 					addLine(getCallerSpan('green','Serveur')+response.data);
+					terminalScrollDown();
 				},(err) => 
 				{	
 					let errMessage = (err.statusText == "Bad Request")? "La commande "+cmd+" n'existe pas" : err.statusText;
@@ -217,6 +222,7 @@ app.controller('Terminal', ['$scope', '$sanitize', '$http', ($scope, $sanitize, 
 		function addLine(str)
 		{
 			$scope.terminal.push($sanitize(str+"<br>"));
+			terminalScrollDown()
 		}
 
 }]);

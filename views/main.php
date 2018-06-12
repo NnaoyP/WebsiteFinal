@@ -1,9 +1,105 @@
-<div>
-	
-	<p>
-		Veniam qui excepteur pariatur pariatur in ullamco nisi dolor incididunt eu pariatur elit sunt sunt velit est elit culpa minim ea quis consectetur reprehenderit dolore minim laboris anim anim ut qui commodo esse dolor sunt nisi occaecat et officia enim esse esse consequat eu aliquip nulla ex duis irure consectetur nostrud et nostrud et pariatur dolor ex nostrud proident irure non culpa quis aliqua consequat voluptate magna laborum excepteur non laborum mollit mollit dolore amet in in enim est nulla fugiat nisi sunt ex deserunt dolore culpa ex consequat proident sit in ea dolore qui eiusmod nisi ad ut aliquip magna ut consequat in elit laborum ut cupidatat labore culpa sit ut est do ullamco proident cupidatat ullamco pariatur nisi excepteur sint aute ex ad dolore officia sunt incididunt id magna laborum eu aliquip do mollit irure elit incididunt deserunt sed commodo culpa nulla proident ut in veniam ad mollit dolor culpa consectetur consequat laboris minim ex minim anim irure exercitation sint anim in sint fugiat sed voluptate mollit id labore pariatur non dolor sed nostrud sint cupidatat mollit cupidatat dolor elit elit elit amet dolor labore nostrud mollit laboris minim in dolor nostrud sit ex dolore do ex nulla minim ut qui do fugiat aliquip anim eu ut elit mollit sed mollit ex amet magna consequat dolore magna et proident in elit.
-		Minim reprehenderit labore aute ea velit ullamco est laboris duis veniam in do ea et quis exercitation incididunt dolor qui et esse adipisicing ut in in est aute aliqua dolor tempor est aliquip magna eu laborum et eu dolor anim eu pariatur aliquip enim eiusmod eu culpa fugiat aliquip ea sed in esse esse sed est commodo cillum non consectetur et cillum ullamco in quis reprehenderit aute consectetur dolor nostrud duis ea velit in adipisicing voluptate sed et excepteur qui commodo velit in culpa in irure commodo et dolor dolore aliqua dolore proident minim adipisicing est incididunt anim sit ex proident tempor consequat proident tempor magna velit amet nisi id nulla dolore ut dolore in in voluptate commodo amet aliquip in dolor cillum aute non occaecat eu laboris deserunt dolor excepteur cillum in voluptate dolore dolore sunt culpa deserunt qui proident veniam dolore veniam id sed laboris exercitation fugiat proident in elit in reprehenderit labore dolor esse deserunt adipisicing non irure voluptate ea cupidatat labore elit cupidatat sint sunt irure in fugiat exercitation sint mollit fugiat cupidatat proident dolore aute anim non non adipisicing aliqua est ut sit qui esse ad sed excepteur consectetur do aute eiusmod pariatur adipisicing amet culpa tempor aliquip velit nisi incididunt in nostrud amet duis duis anim nulla magna ad laborum ad nostrud fugiat sint.
-		Lorem ipsum adipisicing magna consectetur officia fugiat laborum incididunt non fugiat eu exercitation minim ullamco irure fugiat ut ex eiusmod ut exercitation ut magna nulla in in adipisicing enim deserunt velit aute dolor consectetur enim in aliquip cillum cillum reprehenderit elit in sint sit exercitation adipisicing adipisicing anim consectetur pariatur voluptate consectetur adipisicing occaecat fugiat veniam in ut anim ad est voluptate enim enim ut fugiat in voluptate aliqua cillum amet deserunt consequat magna in est non duis ullamco id aute enim excepteur ea ut aliqua quis proident deserunt commodo dolor minim tempor pariatur officia sint mollit ut reprehenderit eu magna magna laboris cupidatat nisi laborum non laborum cupidatat ullamco ullamco dolor ut veniam sunt minim nisi cupidatat do ut dolore incididunt pariatur in laboris non ad fugiat nisi officia laboris consequat incididunt dolor dolor incididunt proident occaecat amet ut proident officia anim ut ut excepteur amet commodo aute anim excepteur commodo consequat exercitation aliqua sit laborum est ex ut aute dolore velit culpa labore nisi ad aliqua sed dolor commodo in cillum consequat voluptate tempor culpa nulla ea nostrud ut ad sed in enim minim ut et cupidatat ut deserunt aute et laboris nisi mollit dolor non sunt magna eu veniam veniam cillum irure laborum commodo aliqua mollit cupidatat ex proident ut non fugiat elit fugiat dolore sunt culpa ut magna officia labore deserunt minim in pariatur.
-	</p>
+<!-- Page principale du site web -->
 
+<?php 
+	// Préparation de données des technologies que j'ai utilisé
+	require_once '../includes/technologies.php'; 
+?>
+
+<div class="container-fluid">
+	
+	<!-- Textes et images de présentation du site -->	
+	<h1 class="text-beautiful text-center">Bienvenue sur mon site web !</h1>
+	<hr class="w-75 align-self-center">
+	<br>
+
+	<div class="row">
+		<blockquote class="col-8 p-3 text-justify h-100 align-middle">
+			J'ai pris la décision de créer un site web dans le cadre de ma recherche d'alternance en contrat professionnel pour ma formation BAC+4 Concepteur développeur informatique à l'ENI de Saint-Herblain. <br><br>
+			Ce site web a pour but tout d'abord de montrer mes capacités pour palier à mon manque d'expérience professionnel dans le domaine du développement mais a été un projet intéressant à refaire et à améliorer au fil des mois. <br><br>
+			Il montre non seulement mes capacitées mais aussi mon évolution et représente pour moi un des projets les plus abouti et polyvalent sur lequel j'ai pu travailler pour l'instant.
+		</blockquote>
+
+		<div class="card col-4 pl-0 pr-0">
+			<img src="./ressources/img/CDI.png" class="card-img-top img-fluid">
+			<div class="card-body pl-2 pr-2">
+				<span>Formation Concepteur Développeur informatique de l'ENI</span>
+			</div>
+		</div>
+
+	</div>
+	<br>
+	<hr>
+	<br>
+	<div class="row">
+		<blockquote class="offset-2 col-8 text-justify">
+			Sur ce site web vous retrouverez pas mal d'informations sur moi, vous pourrez notamment retrouver : <br>
+			Mes informations comme mon Prénom, Nom, Email de contact, mon numéro de téléphone et mon adresse accompagné d'une biographie. <br><br>
+			 Vous pouvez retrouver mes expériences professionnelles, mes connaissances et mes compétences et me contacter et vous avez aussi à disposition mon CV en format PDF. Vous avez accès à mon compte Github et Linkedin et à une liste des différents moyens de me contacter.<br><br>
+
+			 Pour finir vous avez à disposition une petite application AngularJS/jQuery en communication avec une API PHP que j'ai développé dans le but d'enrichir le site avec du contenu et montrer mes capacitées.
+		</blockquote>
+	</div>
+	<br>
+	<hr>
+	<br>
+	<div class="row">
+		<div class="card col-4 pl-0 pr-0">
+			<img class="card-img-top img-fluid" src="./ressources/img/CVWeb.png">
+			
+			<blockquote class="card-body text-center">
+				La deuxième version de mon site web fait avec Angular 5.
+			</blockquote>
+		</div>
+
+		<blockquote class="col-8 p-3 text-justify">
+			Comme je l'ai dit plus tôt, ce site web est à sa troisième refonte. J'ai réalisé pour la première fois un site web personnel en janvier 2018 dans le but de m'aider dans mes recherches d'alternance mais surtout de m'entrainer à utiliser AngularJS auquel je n'ai jamais touché avant. <br><br>
+
+			J'ai donc passé 2-3 semaines à apprendre AngularJS et développer le site web. Suite à cela et sur les conseils d'un recruteur, j'ai réalisé une deuxième version, cette fois-ci en Angular 5 et en une semaine, le but étant de me remettre à l'épreuve et essayer de faire
+			mieux que la fois précédente. <br><br>
+
+			Pour cette dernière version de mon site, j'ai commencé à la développer bien plus tard (mi-Mai) pendant ma POEC Web, après avoir replongé dans le code et avoir appris à utiliser bootstrap j'ai eu envie de reprendre à zéro mon site et de le faire plus beau et plus complet et le plus vite possible, et voilà comment ce site est arrivé.
+		</blockquote>
+
+	</div>
+	
+	<br>
+	<hr>
+	<br>
+
+	<!-- Technologies que j'ai utilisé -->
+	<div class="row">
+
+		<h1 class="text-beautiful col-12 text-center">Technologies utilisées</h1>
+
+		<blockquote class="offset-2 col-8 text-center">
+			Voici une liste des frameworks, outils et languages que j'ai utilisé pour ce site :
+		</blockquote>
+	</div>
+
+	<!-- Ajouté côté serveur -->
+	<div class="row align-items-center p-2">
+		<?php
+
+			foreach ($technologies as $key => $value) {
+
+			?>
+				<div class="col-4 col-lg-3 align-items-center p-1 p-lg-3">
+					<div class="card pl-0 pr-0 align-items-center">
+					
+						<div class="card-header container-fluid">
+							<img class="card-img-top img-fluid offset-3 col-6" style="background-color: transparent;" src="./ressources/logo/<?=$value['img'] ?>">
+						</div>
+
+						<h3 class="card-title text-beautiful"><?=$value['name'] ?></h3>
+						
+					</div>
+				</div>
+
+		<?php 
+
+			}
+
+		?>
+
+	</div>
 </div>

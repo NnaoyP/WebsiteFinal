@@ -21,6 +21,9 @@
 	<!-- Intégration du fichier CSS principal -->
 	<link rel="stylesheet" type="text/css" href="./styles/style.css">
 
+	<!-- Ajout du favicon -->
+	<link rel="icon" type="image/x-icon" href="ressources/img/favicon.ico">
+
 	<?php 
 
 		session_start();
@@ -31,10 +34,9 @@
 			'abtme' => ['#!abtme','A propos de moi','far fa-user'],
 			'myskills' => ['#!myskills','Mes compétences','far fa-chart-bar'],
 			'myexp' => ['#!myexp','Mes expériences pro','far fa-list-alt'],
-			'contactme' => ['#!contactme','Me contacter','far fa-paper-plane'],
+			'terminal' => ['#!terminal',"Une petite application web que j'ai conçu (SuperTerminal)",'fas fa-terminal'],
 			'mycv' => ['#!mycv','Mon CV','far fa-file-pdf'],
 			'abtwebsite' => ['#!abtwebsite','A propos de mon site','far fa-question-circle'],
-			'terminal' => ['#!terminal','Terminal',''],
 		];
 
 		if (true)//!isset($_SESSION['info'])) 
@@ -101,9 +103,7 @@
 
 					<div class="row">
 
-						<a class="col-3 navLinks" href="#!terminal" title="Une petite application web que j'ai conçue (SuperTerminal)"><i class="fas fa-terminal"></i></a>
-
-						<a class="col-3 navLinks" href="http://github.com/NnaoyP" title="Mon github">
+						<a class="offset-3 col-3 navLinks" href="http://github.com/NnaoyP" title="Mon github">
 							<i class="fab fa-github-square"></i>
 						</a>
 
@@ -146,7 +146,7 @@
 		<!-- Affichage du contenu de la page par angularJS (cf : router angularjs ) -->
 		<main class="articleViewContainer">
 
-			<section ng-view class="contentBlock articleView container-fluid">
+			<section ng-view class="contentBlock articleView container-fluid text-major">
 
 			</section>
 
